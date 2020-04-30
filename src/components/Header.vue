@@ -22,4 +22,9 @@ export default {
         text-align: center;
         text-shadow: 2px 2px 2px gray;
     }
+
+    h1
+    {
+        font-size: 100px;
+    }
 </style>
