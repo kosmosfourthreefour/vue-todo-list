@@ -6,7 +6,7 @@ The purpose is to get a greater familiarity with Vue.js.
 
 #### Link here
 ```
-<a href="...">Netlify link</a>
+<a href="https://dreamy-bartik-386f98.netlify.app/">https://dreamy-bartik-386f98.netlify.app/</a>
 
 ```
 
