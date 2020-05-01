@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     
-    <Header theTitle="Task List ✔️"/>
+    <Header theTitle="Todo List ✔️"/>
     <!-- send 'tasks' array to the TaskList child component -->
-    <TaskList taskTitle="Tasks:" v-bind:todos="tasks"/>
+    <TaskList v-bind:todos="tasks"/>
+
+    <input id="taskInput" type="text">
+    <button @click="addTask">ADD</button>
 
   </div>
 </template>
@@ -18,13 +21,20 @@ export default {
     Header,
     TaskList
   },
+  methods:
+  {
+    addTask(){
+      let field = document.getElementById('taskInput');
+      this.tasks.push({id: this.tasks.length + 1, title: field.value, completed: false});
+    }
+  },
 
   data(){
     return {
       tasks: [
-      {id: 1, title: "learn to draw left-handed", completed: true},
-      {id: 2, title: "play the viola", completed: true},
-      {id: 3, title: "make stir fry", completed: false}
+      {id: 1, title: "practice vue.js", completed: false},
+      {id: 2, title: "play the otamatone", completed: false},
+      {id: 3, title: "make banana ice cream 🍌", completed: false}
     ]    
     }
   }
@@ -35,5 +45,13 @@ export default {
 * {
   margin: 0px;
   padding: 0px;
+}
+
+#app {
+  border: 1px solid #CCC;
+  box-shadow: 6px 6px 5px #CCC;
+  margin: 0 auto;
+  margin-top: 10%;
+  max-width: 700px;
 }
 </style>
